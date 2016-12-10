@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		550D6CC31DFC735B00633113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CC21DFC735B00633113 /* AppDelegate.swift */; };
+		550D6CC51DFC735B00633113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CC41DFC735B00633113 /* ViewController.swift */; };
+		550D6CC81DFC735C00633113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CC61DFC735C00633113 /* Main.storyboard */; };
+		550D6CCA1DFC735C00633113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CC91DFC735C00633113 /* Assets.xcassets */; };
+		550D6CCD1DFC735C00633113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CCB1DFC735C00633113 /* LaunchScreen.storyboard */; };
+		550D6CD81DFC735C00633113 /* AudioSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CD71DFC735C00633113 /* AudioSamplerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		550D6CD41DFC735C00633113 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 550D6CB71DFC735B00633113 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 550D6CBE1DFC735B00633113;
+			remoteInfo = AudioSampler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		550D6CBF1DFC735B00633113 /* AudioSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		550D6CC21DFC735B00633113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		550D6CC41DFC735B00633113 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		550D6CC71DFC735C00633113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		550D6CC91DFC735C00633113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		550D6CCC1DFC735C00633113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		550D6CCE1DFC735C00633113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550D6CD31DFC735C00633113 /* AudioSamplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioSamplerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		550D6CD71DFC735C00633113 /* AudioSamplerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSamplerTests.swift; sourceTree = "<group>"; };
+		550D6CD91DFC735C00633113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		550D6CBC1DFC735B00633113 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550D6CD01DFC735C00633113 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		550D6CB61DFC735B00633113 = {
+			isa = PBXGroup;
+			children = (
+				550D6CC11DFC735B00633113 /* AudioSampler */,
+				550D6CD61DFC735C00633113 /* AudioSamplerTests */,
+				550D6CC01DFC735B00633113 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		550D6CC01DFC735B00633113 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				550D6CBF1DFC735B00633113 /* AudioSampler.app */,
+				550D6CD31DFC735C00633113 /* AudioSamplerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		550D6CC11DFC735B00633113 /* AudioSampler */ = {
+			isa = PBXGroup;
+			children = (
+				550D6CC21DFC735B00633113 /* AppDelegate.swift */,
+				550D6CC41DFC735B00633113 /* ViewController.swift */,
+				550D6CC61DFC735C00633113 /* Main.storyboard */,
+				550D6CC91DFC735C00633113 /* Assets.xcassets */,
+				550D6CCB1DFC735C00633113 /* LaunchScreen.storyboard */,
+				550D6CCE1DFC735C00633113 /* Info.plist */,
+			);
+			path = AudioSampler;
+			sourceTree = "<group>";
+		};
+		550D6CD61DFC735C00633113 /* AudioSamplerTests */ = {
+			isa = PBXGroup;
+			children = (
+				550D6CD71DFC735C00633113 /* AudioSamplerTests.swift */,
+				550D6CD91DFC735C00633113 /* Info.plist */,
+			);
+			path = AudioSamplerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		550D6CBE1DFC735B00633113 /* AudioSampler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550D6CDC1DFC735C00633113 /* Build configuration list for PBXNativeTarget "AudioSampler" */;
+			buildPhases = (
+				550D6CBB1DFC735B00633113 /* Sources */,
+				550D6CBC1DFC735B00633113 /* Frameworks */,
+				550D6CBD1DFC735B00633113 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioSampler;
+			productName = AudioSampler;
+			productReference = 550D6CBF1DFC735B00633113 /* AudioSampler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		550D6CD21DFC735C00633113 /* AudioSamplerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550D6CDF1DFC735C00633113 /* Build configuration list for PBXNativeTarget "AudioSamplerTests" */;
+			buildPhases = (
+				550D6CCF1DFC735C00633113 /* Sources */,
+				550D6CD01DFC735C00633113 /* Frameworks */,
+				550D6CD11DFC735C00633113 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				550D6CD51DFC735C00633113 /* PBXTargetDependency */,
+			);
+			name = AudioSamplerTests;
+			productName = AudioSamplerTests;
+			productReference = 550D6CD31DFC735C00633113 /* AudioSamplerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		550D6CB71DFC735B00633113 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Jason Lew";
+				TargetAttributes = {
+					550D6CBE1DFC735B00633113 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y36ZG49HW8;
+						ProvisioningStyle = Automatic;
+					};
+					550D6CD21DFC735C00633113 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y36ZG49HW8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 550D6CBE1DFC735B00633113;
+					};
+				};
+			};
+			buildConfigurationList = 550D6CBA1DFC735B00633113 /* Build configuration list for PBXProject "AudioSampler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 550D6CB61DFC735B00633113;
+			productRefGroup = 550D6CC01DFC735B00633113 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				550D6CBE1DFC735B00633113 /* AudioSampler */,
+				550D6CD21DFC735C00633113 /* AudioSamplerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		550D6CBD1DFC735B00633113 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550D6CCD1DFC735C00633113 /* LaunchScreen.storyboard in Resources */,
+				550D6CCA1DFC735C00633113 /* Assets.xcassets in Resources */,
+				550D6CC81DFC735C00633113 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550D6CD11DFC735C00633113 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		550D6CBB1DFC735B00633113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550D6CC51DFC735B00633113 /* ViewController.swift in Sources */,
+				550D6CC31DFC735B00633113 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550D6CCF1DFC735C00633113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550D6CD81DFC735C00633113 /* AudioSamplerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		550D6CD51DFC735C00633113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 550D6CBE1DFC735B00633113 /* AudioSampler */;
+			targetProxy = 550D6CD41DFC735C00633113 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		550D6CC61DFC735C00633113 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550D6CC71DFC735C00633113 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		550D6CCB1DFC735C00633113 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550D6CCC1DFC735C00633113 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		550D6CDA1DFC735C00633113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		550D6CDB1DFC735C00633113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		550D6CDD1DFC735C00633113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y36ZG49HW8;
+				INFOPLIST_FILE = AudioSampler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.AudioSampler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		550D6CDE1DFC735C00633113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y36ZG49HW8;
+				INFOPLIST_FILE = AudioSampler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.AudioSampler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		550D6CE01DFC735C00633113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y36ZG49HW8;
+				INFOPLIST_FILE = AudioSamplerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.AudioSamplerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioSampler.app/AudioSampler";
+			};
+			name = Debug;
+		};
+		550D6CE11DFC735C00633113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y36ZG49HW8;
+				INFOPLIST_FILE = AudioSamplerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.AudioSamplerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioSampler.app/AudioSampler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		550D6CBA1DFC735B00633113 /* Build configuration list for PBXProject "AudioSampler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550D6CDA1DFC735C00633113 /* Debug */,
+				550D6CDB1DFC735C00633113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		550D6CDC1DFC735C00633113 /* Build configuration list for PBXNativeTarget "AudioSampler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550D6CDD1DFC735C00633113 /* Debug */,
+				550D6CDE1DFC735C00633113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		550D6CDF1DFC735C00633113 /* Build configuration list for PBXNativeTarget "AudioSamplerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550D6CE01DFC735C00633113 /* Debug */,
+				550D6CE11DFC735C00633113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 550D6CB71DFC735B00633113 /* Project object */;
+}
