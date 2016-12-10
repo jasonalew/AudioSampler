@@ -25,4 +25,6 @@ enum AudioError: Error {
     case unableToStartAUGraph(code: Int)
     case unableToStopAUGraph(code: Int)
     case unableToRestartAUGraph(code: Int)
+    case ioUnitError
+    case samplerUnitError
 }

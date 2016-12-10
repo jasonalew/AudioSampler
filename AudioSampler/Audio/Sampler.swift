@@ -16,7 +16,7 @@ class Sampler: NSObject {
         static let noteOff = 0x8
     }
     
-    let preferredSampleRate = 44100.0
+    var graphSampleRate: Double = 44100.0
     
     var samplerUnit: AudioUnit?
     var processingGraph: AUGraph?
@@ -32,7 +32,7 @@ class Sampler: NSObject {
     }
     
     func createAUGraph() throws {
-        var result: OSStatus = noErr
+        var result = noErr
         var samplerNode = AUNode()
         var ioNode = AUNode()
         
@@ -94,8 +94,62 @@ class Sampler: NSObject {
         }
     }
     
-    func configureAndStart(graph: AUGraph) {
+    func configureAndStart(graph: AUGraph) throws {
+        var result = noErr
+        var framesPerSlice: UInt32 = 0
+        var framesPerSlicePropertySize = UInt32(MemoryLayout.size(ofValue: framesPerSlice))
+        let sampleRatePropertySize = UInt32(MemoryLayout.size(ofValue: graphSampleRate))
         
+        guard let ioUnit = ioUnit else {
+            throw AudioError.ioUnitError
+        }
+        // Initialize the IO Unit
+        result = AudioUnitInitialize(ioUnit)
+        guard result == noErr else {
+            throw AudioError.unableToInitializeIOUnit(code: Int(result))
+        }
+        
+        // Set the IO Unit's output sample rate
+        result = AudioUnitSetProperty(ioUnit, kAudioUnitProperty_SampleRate, kAudioUnitScope_Output, 0, &graphSampleRate, sampleRatePropertySize)
+        guard result == noErr else {
+            throw AudioError.auSetPropertyIOSampleRate(code: Int(result))
+        }
+        
+        // Obtain the value of the maximum frames per slice from the IO Unit 
+        result = AudioUnitGetProperty(ioUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, &framesPerSlicePropertySize)
+        guard result == noErr else {
+            throw AudioError.unableToRetrieveMaxFramesPerSlice(code: Int(result))
+        }
+        
+        guard let samplerUnit = samplerUnit else {
+            throw AudioError.samplerUnitError
+        }
+        // Set the sampler unit's output sample rate
+        result = AudioUnitSetProperty(samplerUnit, kAudioUnitProperty_SampleRate, kAudioUnitScope_Output, 0, &graphSampleRate, sampleRatePropertySize)
+        guard result == noErr else {
+            throw AudioError.auSetPropertySamplerSampleRate(code: Int(result))
+        }
+        
+        // Set the sampler unit's maximum frames per slice
+        result = AudioUnitSetProperty(samplerUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, framesPerSlicePropertySize)
+        guard result == noErr else {
+            throw AudioError.auSetPropertySamplerMaxFramesPerSlice(code: Int(result))
+        }
+        
+        // Initialize the audio processing graph
+        result = AUGraphInitialize(graph)
+        guard result == noErr else {
+            throw AudioError.unableToInitializeAUGraph(code: Int(result))
+        }
+        
+        // Start the graph
+        result = AUGraphStart(graph)
+        guard result == noErr else {
+            throw AudioError.unableToStartAUGraph(code: Int(result))
+        }
+        
+        // Print out the graph to the console
+        CAShow(UnsafeMutablePointer<AUGraph>(graph))
     }
 }
 
