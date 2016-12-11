@@ -16,20 +16,32 @@ enum MidiMessage {
 
 protocol MIDIEventCapable {}
 
-extension MIDIEventCapable {
+extension MIDIEventCapable where Self: Instrument {
     // MARK: - Note Commands
-    func play(note: UInt32, velocity: UInt32, with sampler: AudioUnit) {
+    
+    /// Plays a MIDI note
+    ///
+    /// - Parameters:
+    ///   - note: the note to play
+    ///   - velocity: velocity in range 0-127
+    func play(note: UInt32, velocity: UInt32) {
         let newVelocity = min(velocity, 127)
         let noteCommand = MidiMessage.noteOn << 4 | 0
-        let result = MusicDeviceMIDIEvent(sampler, noteCommand, note, newVelocity, 0)
+        guard let playerUnit = self.playerUnit else { return }
+        let result = MusicDeviceMIDIEvent(playerUnit, noteCommand, note, newVelocity, 0)
         if result != noErr {
             dlog(items: "Unable to play note. Error code: \(Int(result))")
         }
     }
     
-    func stop(note: UInt32, on sampler: AudioUnit) {
+    
+    /// Stops playing a MIDI note
+    ///
+    /// - Parameter note: the note to stop
+    func stop(note: UInt32) {
+        guard let playerUnit = self.playerUnit else { return }
         let noteCommand = MidiMessage.noteOff << 4 | 0
-        let result = MusicDeviceMIDIEvent(sampler, noteCommand, note, 0, 0)
+        let result = MusicDeviceMIDIEvent(playerUnit, noteCommand, note, 0, 0)
         if result != noErr {
             dlog(items: "Unable to stop playing the note. Error code: \(Int(result))")
         }

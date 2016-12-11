@@ -17,6 +17,11 @@
 		550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CEC1DFC7BE200633113 /* ViewController.swift */; };
 		550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CEE1DFC7F4700633113 /* AudioErrors.swift */; };
 		550D6CF11DFCDFF900633113 /* SampleLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CF01DFCDFF900633113 /* SampleLoadable.swift */; };
+		550D6CF31DFCF20500633113 /* MIDIEventCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CF21DFCF20500633113 /* MIDIEventCapable.swift */; };
+		550D6CFF1DFD19FE00633113 /* ElPiano1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CF51DFD19FE00633113 /* ElPiano1.sf2 */; };
+		550D6D051DFD19FE00633113 /* ontology-destroy-you-bass.exs in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */; };
+		550D6D2E1DFD1B9400633113 /* EXS Factory Samples in Resources */ = {isa = PBXBuildFile; fileRef = 550D6D2D1DFD1B9400633113 /* EXS Factory Samples */; };
+		550D6D301DFD243000633113 /* AudioTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6D2F1DFD243000633113 /* AudioTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		550D6CEC1DFC7BE200633113 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		550D6CEE1DFC7F4700633113 /* AudioErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioErrors.swift; sourceTree = "<group>"; };
 		550D6CF01DFCDFF900633113 /* SampleLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleLoadable.swift; sourceTree = "<group>"; };
+		550D6CF21DFCF20500633113 /* MIDIEventCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIEventCapable.swift; sourceTree = "<group>"; };
+		550D6CF51DFD19FE00633113 /* ElPiano1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ElPiano1.sf2; sourceTree = "<group>"; };
+		550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ontology-destroy-you-bass.exs"; sourceTree = "<group>"; };
+		550D6D2D1DFD1B9400633113 /* EXS Factory Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "EXS Factory Samples"; sourceTree = "<group>"; };
+		550D6D2F1DFD243000633113 /* AudioTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,7 @@
 		550D6CC11DFC735B00633113 /* AudioSampler */ = {
 			isa = PBXGroup;
 			children = (
+				550D6CF41DFD19E400633113 /* Instruments */,
 				550D6CE51DFC789E00633113 /* Helpers */,
 				550D6CE21DFC737600633113 /* Audio */,
 				550D6CEB1DFC7BA900633113 /* ViewControllers */,
@@ -112,6 +123,8 @@
 				550D6CE31DFC73AC00633113 /* Sampler.swift */,
 				550D6CEE1DFC7F4700633113 /* AudioErrors.swift */,
 				550D6CF01DFCDFF900633113 /* SampleLoadable.swift */,
+				550D6CF21DFCF20500633113 /* MIDIEventCapable.swift */,
+				550D6D2F1DFD243000633113 /* AudioTypes.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -130,6 +143,16 @@
 				550D6CEC1DFC7BE200633113 /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		550D6CF41DFD19E400633113 /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				550D6D2D1DFD1B9400633113 /* EXS Factory Samples */,
+				550D6CF51DFD19FE00633113 /* ElPiano1.sf2 */,
+				550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */,
+			);
+			name = Instruments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +242,9 @@
 			files = (
 				550D6CCD1DFC735C00633113 /* LaunchScreen.storyboard in Resources */,
 				550D6CCA1DFC735C00633113 /* Assets.xcassets in Resources */,
+				550D6CFF1DFD19FE00633113 /* ElPiano1.sf2 in Resources */,
+				550D6D051DFD19FE00633113 /* ontology-destroy-you-bass.exs in Resources */,
+				550D6D2E1DFD1B9400633113 /* EXS Factory Samples in Resources */,
 				550D6CC81DFC735C00633113 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				550D6CE41DFC73AC00633113 /* Sampler.swift in Sources */,
+				550D6CF31DFCF20500633113 /* MIDIEventCapable.swift in Sources */,
+				550D6D301DFD243000633113 /* AudioTypes.swift in Sources */,
 				550D6CC31DFC735B00633113 /* AppDelegate.swift in Sources */,
 				550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */,
 				550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */,

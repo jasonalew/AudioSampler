@@ -30,3 +30,10 @@ enum AudioError: Error {
     // Instrument loading
     case unableToSetPresetProperty(code: Int)
 }
+
+enum AudioSessionError: Error {
+    case errorSettingAVAudioSessionCategory(Error)
+    case errorSettingPreferredSampleRate(Error)
+    case errorSettingPreferredBufferDuration(Error)
+    case errorActivatingSession(Error)
+}

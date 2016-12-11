@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    var sampler: Instrument!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let sampler = Sampler()
+        sampler = Sampler()!
+        let instrumentUrl = Bundle.main.url(forResource: "ontology-destroy-you-bass", withExtension: "exs")
+        try! sampler.loadInstrument(from: instrumentUrl!, patch: 0, type: InstrumentType.exs)
     }
 
+    @IBAction func buttonTapped(_ sender: Any) {
+        sampler.play(note: 60, velocity: 127)
+    }
     
 }

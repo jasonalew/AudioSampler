@@ -10,23 +10,34 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
-class Sampler {
-    enum MidiMessage {
-        static let noteOn: UInt32 = 0x9
-        static let noteOff: UInt32 = 0x8
-    }
+class Sampler: Instrument {
     
     // MARK: - Properties
     var graphSampleRate: Double = 44100.0
     
-    var samplerUnit: AudioUnit?
+    var playerUnit: AudioUnit?
     var processingGraph: AUGraph?
     var ioUnit: AudioUnit?
+    lazy var sessionInstance = AVAudioSession.sharedInstance()
     
     // MARK: - Init
     init?() {
         do {
             try createAUGraph()
+        } catch let error {
+            dlog(items: error)
+            return nil
+        }
+        
+        do {
+            try setupAudioSession()
+        } catch let error {
+            dlog(items: error)
+            return nil
+        }
+        
+        do {
+            try configureAndStart(graph: processingGraph!)
         } catch let error {
             dlog(items: error)
             return nil
@@ -85,7 +96,7 @@ class Sampler {
         }
         
         // Obtain a reference to the sampler unit from its node
-        result = AUGraphNodeInfo(processingGraph, samplerNode, nil, &samplerUnit)
+        result = AUGraphNodeInfo(processingGraph, samplerNode, nil, &playerUnit)
         guard result == noErr else {
             throw AudioError.unableToObtainReferenceToSampler(code: Int(result))
         }
@@ -124,17 +135,17 @@ class Sampler {
             throw AudioError.unableToRetrieveMaxFramesPerSlice(code: Int(result))
         }
         
-        guard let samplerUnit = samplerUnit else {
+        guard let audioUnit = playerUnit else {
             throw AudioError.samplerUnitError
         }
         // Set the sampler unit's output sample rate
-        result = AudioUnitSetProperty(samplerUnit, kAudioUnitProperty_SampleRate, kAudioUnitScope_Output, 0, &graphSampleRate, sampleRatePropertySize)
+        result = AudioUnitSetProperty(audioUnit, kAudioUnitProperty_SampleRate, kAudioUnitScope_Output, 0, &graphSampleRate, sampleRatePropertySize)
         guard result == noErr else {
             throw AudioError.auSetPropertySamplerSampleRate(code: Int(result))
         }
         
         // Set the sampler unit's maximum frames per slice
-        result = AudioUnitSetProperty(samplerUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, framesPerSlicePropertySize)
+        result = AudioUnitSetProperty(audioUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, framesPerSlicePropertySize)
         guard result == noErr else {
             throw AudioError.auSetPropertySamplerMaxFramesPerSlice(code: Int(result))
         }
@@ -171,24 +182,38 @@ class Sampler {
         }
     }
     
-    // MARK: - Note Commands
-    func play(note: UInt32, velocity: UInt32) {
-        let newVelocity = min(velocity, 127)
-        let noteCommand = MidiMessage.noteOn << 4 | 0
-        guard let samplerUnit = samplerUnit else { return }
-        let result = MusicDeviceMIDIEvent(samplerUnit, noteCommand, note, newVelocity, 0)
-        if result != noErr {
-            dlog(items: "Unable to play note. Error code: \(Int(result))")
+    // MARK: - AudioSession
+    func setupAudioSession() throws {
+        // Set the category
+        do {
+            try sessionInstance.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+        } catch let error {
+            throw AudioSessionError.errorSettingAVAudioSessionCategory(error)
         }
-    }
-    
-    func stop(note: UInt32) {
-        let noteCommand = MidiMessage.noteOff << 4 | 0
-        guard let samplerUnit = samplerUnit else { return }
-        let result = MusicDeviceMIDIEvent(samplerUnit, noteCommand, note, 0, 0)
-        if result != noErr {
-            dlog(items: "Unable to stop playing the note. Error code: \(Int(result))")
+        
+        // Set the sample rate
+        do {
+            try sessionInstance.setPreferredSampleRate(graphSampleRate)
+        } catch let error {
+            throw AudioSessionError.errorSettingPreferredSampleRate(error)
         }
+        
+        // Request preferred buffer duration
+        do {
+            try sessionInstance.setPreferredIOBufferDuration(0.005)
+        } catch let error {
+            throw AudioSessionError.errorSettingPreferredBufferDuration(error)
+        }
+        
+        // Activate the audio session
+        do {
+            try sessionInstance.setActive(true)
+        } catch let error {
+            throw AudioSessionError.errorActivatingSession(error)
+        }
+        
+        // Get the actual hardware sample rate and store it for later use in the graph
+        graphSampleRate = sessionInstance.sampleRate
     }
 }
 

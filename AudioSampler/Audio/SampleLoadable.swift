@@ -9,15 +9,9 @@
 import Foundation
 import AVFoundation
 
-enum InstrumentType {
-    static let sf2 = kInstrumentType_SF2Preset
-    static let exs = kInstrumentType_EXS24
-    static let auPreset = kInstrumentType_AUPreset
-}
-
 protocol SampleLoadable {}
 
-extension SampleLoadable {
+extension SampleLoadable where Self: AudioType {
     /// Loads and instrument to the AudioUnit sampler
     ///
     /// - Parameters:
@@ -25,7 +19,7 @@ extension SampleLoadable {
     ///   - url: URL of the sample
     ///   - patch: the preset number
     ///   - type: a SF2, EXS, or AUPreset instrument
-    func loadInstrument(to sampler: AudioUnit, from url: URL, patch: Int, type: Int) throws {
+    func loadInstrument(from url: URL, patch: Int, type: Int) throws {
         
         var result = noErr
         var instrumentData = AUSamplerInstrumentData(
@@ -36,8 +30,11 @@ extension SampleLoadable {
             presetID: UInt8(patch))
         
         // Load the instrument
+        guard let playerUnit = self.playerUnit else {
+            throw AudioError.samplerUnitError
+        }
         result = AudioUnitSetProperty(
-            sampler,
+            playerUnit,
             kAUSamplerProperty_LoadInstrument,
             kAudioUnitScope_Global,
             0,
