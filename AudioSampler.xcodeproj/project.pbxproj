@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		550D6CC31DFC735B00633113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CC21DFC735B00633113 /* AppDelegate.swift */; };
-		550D6CC51DFC735B00633113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CC41DFC735B00633113 /* ViewController.swift */; };
 		550D6CC81DFC735C00633113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CC61DFC735C00633113 /* Main.storyboard */; };
 		550D6CCA1DFC735C00633113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CC91DFC735C00633113 /* Assets.xcassets */; };
 		550D6CCD1DFC735C00633113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CCB1DFC735C00633113 /* LaunchScreen.storyboard */; };
 		550D6CD81DFC735C00633113 /* AudioSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CD71DFC735C00633113 /* AudioSamplerTests.swift */; };
+		550D6CE41DFC73AC00633113 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CE31DFC73AC00633113 /* Sampler.swift */; };
+		550D6CE71DFC78C000633113 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CE61DFC78C000633113 /* Constants.swift */; };
+		550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CEC1DFC7BE200633113 /* ViewController.swift */; };
+		550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CEE1DFC7F4700633113 /* AudioErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +31,6 @@
 /* Begin PBXFileReference section */
 		550D6CBF1DFC735B00633113 /* AudioSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		550D6CC21DFC735B00633113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		550D6CC41DFC735B00633113 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		550D6CC71DFC735C00633113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		550D6CC91DFC735C00633113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		550D6CCC1DFC735C00633113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,10 @@
 		550D6CD31DFC735C00633113 /* AudioSamplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioSamplerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		550D6CD71DFC735C00633113 /* AudioSamplerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSamplerTests.swift; sourceTree = "<group>"; };
 		550D6CD91DFC735C00633113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550D6CE31DFC73AC00633113 /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		550D6CE61DFC78C000633113 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		550D6CEC1DFC7BE200633113 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		550D6CEE1DFC7F4700633113 /* AudioErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,10 @@
 		550D6CC11DFC735B00633113 /* AudioSampler */ = {
 			isa = PBXGroup;
 			children = (
+				550D6CE51DFC789E00633113 /* Helpers */,
+				550D6CE21DFC737600633113 /* Audio */,
+				550D6CEB1DFC7BA900633113 /* ViewControllers */,
 				550D6CC21DFC735B00633113 /* AppDelegate.swift */,
-				550D6CC41DFC735B00633113 /* ViewController.swift */,
 				550D6CC61DFC735C00633113 /* Main.storyboard */,
 				550D6CC91DFC735C00633113 /* Assets.xcassets */,
 				550D6CCB1DFC735C00633113 /* LaunchScreen.storyboard */,
@@ -94,6 +102,31 @@
 				550D6CD91DFC735C00633113 /* Info.plist */,
 			);
 			path = AudioSamplerTests;
+			sourceTree = "<group>";
+		};
+		550D6CE21DFC737600633113 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				550D6CE31DFC73AC00633113 /* Sampler.swift */,
+				550D6CEE1DFC7F4700633113 /* AudioErrors.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		550D6CE51DFC789E00633113 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				550D6CE61DFC78C000633113 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		550D6CEB1DFC7BA900633113 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				550D6CEC1DFC7BE200633113 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				550D6CC51DFC735B00633113 /* ViewController.swift in Sources */,
+				550D6CE41DFC73AC00633113 /* Sampler.swift in Sources */,
 				550D6CC31DFC735B00633113 /* AppDelegate.swift in Sources */,
+				550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */,
+				550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */,
+				550D6CE71DFC78C000633113 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y36ZG49HW8;
 				INFOPLIST_FILE = AudioSampler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.AudioSampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +391,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y36ZG49HW8;
 				INFOPLIST_FILE = AudioSampler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.jlew.AudioSampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,27 +10,30 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
-class Sampler: NSObject {
+class Sampler {
     enum MidiMessage {
-        static let noteOn = 0x9
-        static let noteOff = 0x8
+        static let noteOn: UInt32 = 0x9
+        static let noteOff: UInt32 = 0x8
     }
     
+    // MARK: - Properties
     var graphSampleRate: Double = 44100.0
     
     var samplerUnit: AudioUnit?
     var processingGraph: AUGraph?
     var ioUnit: AudioUnit?
     
-    override init() {
-        super.init()
+    // MARK: - Init
+    init?() {
         do {
             try createAUGraph()
         } catch let error {
             dlog(items: error)
+            return nil
         }
     }
     
+    // MARK: - Setup AUGraph
     func createAUGraph() throws {
         var result = noErr
         var samplerNode = AUNode()
@@ -150,6 +153,42 @@ class Sampler: NSObject {
         
         // Print out the graph to the console
         CAShow(UnsafeMutablePointer<AUGraph>(graph))
+    }
+    
+    func stopAudioProcessingGraph() throws {
+        guard let processingGraph = processingGraph else { return }
+        let result = AUGraphStop(processingGraph)
+        guard result == noErr else {
+            throw AudioError.unableToStopAUGraph(code: Int(result))
+        }
+    }
+    
+    func restartAudioProcessingGraph() throws {
+        guard let processingGraph = processingGraph else { return }
+        let result = AUGraphStart(processingGraph)
+        guard result == noErr else {
+            throw AudioError.unableToRestartAUGraph(code: Int(result))
+        }
+    }
+    
+    // MARK: - Note Commands
+    func play(note: UInt32, velocity: UInt32) {
+        let newVelocity = min(velocity, 127)
+        let noteCommand = MidiMessage.noteOn << 4 | 0
+        guard let samplerUnit = samplerUnit else { return }
+        let result = MusicDeviceMIDIEvent(samplerUnit, noteCommand, note, newVelocity, 0)
+        if result != noErr {
+            dlog(items: "Unable to play note. Error code: \(Int(result))")
+        }
+    }
+    
+    func stop(note: UInt32) {
+        let noteCommand = MidiMessage.noteOff << 4 | 0
+        guard let samplerUnit = samplerUnit else { return }
+        let result = MusicDeviceMIDIEvent(samplerUnit, noteCommand, note, 0, 0)
+        if result != noErr {
+            dlog(items: "Unable to stop playing the note. Error code: \(Int(result))")
+        }
     }
 }
 
