@@ -16,6 +16,7 @@
 		550D6CE71DFC78C000633113 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CE61DFC78C000633113 /* Constants.swift */; };
 		550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CEC1DFC7BE200633113 /* ViewController.swift */; };
 		550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CEE1DFC7F4700633113 /* AudioErrors.swift */; };
+		550D6CF11DFCDFF900633113 /* SampleLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6CF01DFCDFF900633113 /* SampleLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		550D6CE61DFC78C000633113 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		550D6CEC1DFC7BE200633113 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		550D6CEE1DFC7F4700633113 /* AudioErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioErrors.swift; sourceTree = "<group>"; };
+		550D6CF01DFCDFF900633113 /* SampleLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleLoadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				550D6CE31DFC73AC00633113 /* Sampler.swift */,
 				550D6CEE1DFC7F4700633113 /* AudioErrors.swift */,
+				550D6CF01DFCDFF900633113 /* SampleLoadable.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */,
 				550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */,
 				550D6CE71DFC78C000633113 /* Constants.swift in Sources */,
+				550D6CF11DFCDFF900633113 /* SampleLoadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +452,7 @@
 				550D6CDE1DFC735C00633113 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		550D6CDF1DFC735C00633113 /* Build configuration list for PBXNativeTarget "AudioSamplerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +461,7 @@
 				550D6CE11DFC735C00633113 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

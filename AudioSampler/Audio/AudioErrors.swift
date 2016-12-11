@@ -27,4 +27,6 @@ enum AudioError: Error {
     case unableToRestartAUGraph(code: Int)
     case ioUnitError
     case samplerUnitError
+    // Instrument loading
+    case unableToSetPresetProperty(code: Int)
 }
