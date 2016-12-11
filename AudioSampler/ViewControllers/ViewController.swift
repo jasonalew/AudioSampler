@@ -10,13 +10,18 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-    var sampler: Instrument!
+    var sampler: SamplerInstrument!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        sampler = Sampler()!
+        sampler = Sampler()
         let instrumentUrl = Bundle.main.url(forResource: "ontology-destroy-you-bass", withExtension: "exs")
         try! sampler.loadInstrument(from: instrumentUrl!, patch: 0, type: InstrumentType.exs)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
 
     @IBAction func buttonTapped(_ sender: Any) {

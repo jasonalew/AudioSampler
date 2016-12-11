@@ -152,7 +152,7 @@
 				550D6CF51DFD19FE00633113 /* ElPiano1.sf2 */,
 				550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */,
 			);
-			name = Instruments;
+			path = Instruments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -16,7 +16,8 @@ enum InstrumentType {
 }
 
 protocol AudioType {
-    var playerUnit: AudioUnit? { get set }
+    var instrumentUnit: AudioUnit? { get set }
 }
 
-typealias Instrument = AudioType & SampleLoadable & MIDIEventCapable
+typealias Instrument = AudioType & MIDIEventCapable
+typealias SamplerInstrument = Instrument & SampleLoadable

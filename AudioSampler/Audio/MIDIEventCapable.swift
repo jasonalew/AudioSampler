@@ -27,8 +27,8 @@ extension MIDIEventCapable where Self: Instrument {
     func play(note: UInt32, velocity: UInt32) {
         let newVelocity = min(velocity, 127)
         let noteCommand = MidiMessage.noteOn << 4 | 0
-        guard let playerUnit = self.playerUnit else { return }
-        let result = MusicDeviceMIDIEvent(playerUnit, noteCommand, note, newVelocity, 0)
+        guard let instrumentUnit = self.instrumentUnit else { return }
+        let result = MusicDeviceMIDIEvent(instrumentUnit, noteCommand, note, newVelocity, 0)
         if result != noErr {
             dlog(items: "Unable to play note. Error code: \(Int(result))")
         }
@@ -39,9 +39,9 @@ extension MIDIEventCapable where Self: Instrument {
     ///
     /// - Parameter note: the note to stop
     func stop(note: UInt32) {
-        guard let playerUnit = self.playerUnit else { return }
+        guard let instrumentUnit = self.instrumentUnit else { return }
         let noteCommand = MidiMessage.noteOff << 4 | 0
-        let result = MusicDeviceMIDIEvent(playerUnit, noteCommand, note, 0, 0)
+        let result = MusicDeviceMIDIEvent(instrumentUnit, noteCommand, note, 0, 0)
         if result != noErr {
             dlog(items: "Unable to stop playing the note. Error code: \(Int(result))")
         }

@@ -10,7 +10,8 @@ import Foundation
 
 enum AudioError: Error {
     case unableToCreateAUGraph(code: Int)
-    case unableToAddSamplerToGraph(code: Int)
+    case unableToAccessGraph
+    case unableToAddNodeToGraph(code: Int)
     case unableToAddOutputToGraph(code: Int)
     case unableToOpenGraph(code: Int)
     case unableToInterconnectNodesInGraph(code: Int)

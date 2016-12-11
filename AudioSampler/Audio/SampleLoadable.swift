@@ -30,11 +30,11 @@ extension SampleLoadable where Self: AudioType {
             presetID: UInt8(patch))
         
         // Load the instrument
-        guard let playerUnit = self.playerUnit else {
+        guard let instrumentUnit = self.instrumentUnit else {
             throw AudioError.samplerUnitError
         }
         result = AudioUnitSetProperty(
-            playerUnit,
+            instrumentUnit,
             kAUSamplerProperty_LoadInstrument,
             kAudioUnitScope_Global,
             0,

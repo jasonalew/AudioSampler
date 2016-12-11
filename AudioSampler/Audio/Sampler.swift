@@ -10,12 +10,12 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
-class Sampler: Instrument {
+class Sampler: SamplerInstrument {
     
     // MARK: - Properties
     var graphSampleRate: Double = 44100.0
     
-    var playerUnit: AudioUnit?
+    var instrumentUnit: AudioUnit?
     var processingGraph: AUGraph?
     var ioUnit: AudioUnit?
     lazy var sessionInstance = AVAudioSession.sharedInstance()
@@ -68,13 +68,13 @@ class Sampler: Instrument {
         result = NewAUGraph(&processingGraph)
         guard let processingGraph = processingGraph,
             result == noErr else {
-            throw AudioError.unableToCreateAUGraph(code: Int(result))
+                throw AudioError.unableToCreateAUGraph(code: Int(result))
         }
         
         // Add the sampler to the graph
         result = AUGraphAddNode(processingGraph, &samplerDescription, &samplerNode)
         guard result == noErr else {
-            throw AudioError.unableToAddSamplerToGraph(code: Int(result))
+            throw AudioError.unableToAddNodeToGraph(code: Int(result))
         }
         
         // Add the output unit to the graph
@@ -96,7 +96,7 @@ class Sampler: Instrument {
         }
         
         // Obtain a reference to the sampler unit from its node
-        result = AUGraphNodeInfo(processingGraph, samplerNode, nil, &playerUnit)
+        result = AUGraphNodeInfo(processingGraph, samplerNode, nil, &instrumentUnit)
         guard result == noErr else {
             throw AudioError.unableToObtainReferenceToSampler(code: Int(result))
         }
@@ -129,13 +129,13 @@ class Sampler: Instrument {
             throw AudioError.auSetPropertyIOSampleRate(code: Int(result))
         }
         
-        // Obtain the value of the maximum frames per slice from the IO Unit 
+        // Obtain the value of the maximum frames per slice from the IO Unit
         result = AudioUnitGetProperty(ioUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, &framesPerSlicePropertySize)
         guard result == noErr else {
             throw AudioError.unableToRetrieveMaxFramesPerSlice(code: Int(result))
         }
         
-        guard let audioUnit = playerUnit else {
+        guard let audioUnit = instrumentUnit else {
             throw AudioError.samplerUnitError
         }
         // Set the sampler unit's output sample rate
@@ -216,7 +216,6 @@ class Sampler: Instrument {
         graphSampleRate = sessionInstance.sampleRate
     }
 }
-
 
 
 
