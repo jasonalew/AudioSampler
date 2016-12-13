@@ -34,7 +34,6 @@ extension MIDIEventCapable where Self: Instrument {
         }
     }
     
-    
     /// Stops playing a MIDI note
     ///
     /// - Parameter note: the note to stop
