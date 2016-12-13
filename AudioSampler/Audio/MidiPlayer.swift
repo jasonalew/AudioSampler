@@ -48,7 +48,9 @@ class MidiPlayer {
         }
         
         // Load the file
-        result = MusicSequenceFileLoad(musicSequence, url as CFURL, MusicSequenceFileTypeID.midiType, [])
+        result = MusicSequenceFileLoad(musicSequence,
+                                       url as CFURL,
+                                       MusicSequenceFileTypeID.midiType, [])
         guard result == noErr else {
             throw MusicPlayerError.unableToLoadFile(code: Int(result))
         }

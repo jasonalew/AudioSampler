@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     // MARK: - Actions
     func setupSampler() {
         sampler = Sampler()
-        guard let instrumentUrl = Bundle.main.url(forResource: "ElPiano1", withExtension: "sf2") else { return }
+        guard let instrumentUrl = Bundle.main.url(forResource: "ElPiano1",
+                                                  withExtension: "sf2") else { return }
         do {
             try sampler.loadInstrument(from: instrumentUrl, patch: 0, type: InstrumentType.sf2)
         } catch let error {
@@ -44,7 +45,8 @@ class ViewController: UIViewController {
             dlog(items: error)
             return
         }
-        guard let midiUrl = Bundle.main.url(forResource: "bach-invention-01", withExtension: "mid"),
+        guard let midiUrl = Bundle.main.url(forResource: "bach-invention-01",
+                                            withExtension: "mid"),
         let processingGraph = sampler.processingGraph else { return }
         do {
             try midiPlayer.loadMidiSequence(at: midiUrl, withGraph: processingGraph)

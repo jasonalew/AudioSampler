@@ -124,13 +124,23 @@ class Sampler: SamplerInstrument {
         }
         
         // Set the IO Unit's output sample rate
-        result = AudioUnitSetProperty(ioUnit, kAudioUnitProperty_SampleRate, kAudioUnitScope_Output, 0, &graphSampleRate, sampleRatePropertySize)
+        result = AudioUnitSetProperty(ioUnit,
+                                      kAudioUnitProperty_SampleRate,
+                                      kAudioUnitScope_Output,
+                                      0,
+                                      &graphSampleRate,
+                                      sampleRatePropertySize)
         guard result == noErr else {
             throw AudioError.auSetPropertyIOSampleRate(code: Int(result))
         }
         
         // Obtain the value of the maximum frames per slice from the IO Unit
-        result = AudioUnitGetProperty(ioUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, &framesPerSlicePropertySize)
+        result = AudioUnitGetProperty(ioUnit,
+                                      kAudioUnitProperty_MaximumFramesPerSlice,
+                                      kAudioUnitScope_Global,
+                                      0,
+                                      &framesPerSlice,
+                                      &framesPerSlicePropertySize)
         guard result == noErr else {
             throw AudioError.unableToRetrieveMaxFramesPerSlice(code: Int(result))
         }
@@ -139,13 +149,23 @@ class Sampler: SamplerInstrument {
             throw AudioError.samplerUnitError
         }
         // Set the sampler unit's output sample rate
-        result = AudioUnitSetProperty(audioUnit, kAudioUnitProperty_SampleRate, kAudioUnitScope_Output, 0, &graphSampleRate, sampleRatePropertySize)
+        result = AudioUnitSetProperty(audioUnit,
+                                      kAudioUnitProperty_SampleRate,
+                                      kAudioUnitScope_Output,
+                                      0,
+                                      &graphSampleRate,
+                                      sampleRatePropertySize)
         guard result == noErr else {
             throw AudioError.auSetPropertySamplerSampleRate(code: Int(result))
         }
         
         // Set the sampler unit's maximum frames per slice
-        result = AudioUnitSetProperty(audioUnit, kAudioUnitProperty_MaximumFramesPerSlice, kAudioUnitScope_Global, 0, &framesPerSlice, framesPerSlicePropertySize)
+        result = AudioUnitSetProperty(audioUnit,
+                                      kAudioUnitProperty_MaximumFramesPerSlice,
+                                      kAudioUnitScope_Global,
+                                      0,
+                                      &framesPerSlice,
+                                      framesPerSlicePropertySize)
         guard result == noErr else {
             throw AudioError.auSetPropertySamplerMaxFramesPerSlice(code: Int(result))
         }
@@ -186,7 +206,8 @@ class Sampler: SamplerInstrument {
     private func setupAudioSession() throws {
         // Set the category
         do {
-            try sessionInstance.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+            try sessionInstance.setCategory(AVAudioSessionCategoryPlayback,
+                                            with: .mixWithOthers)
         } catch let error {
             throw AudioSessionError.errorSettingAVAudioSessionCategory(error)
         }
