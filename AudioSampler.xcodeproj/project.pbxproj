@@ -22,6 +22,7 @@
 		550D6D051DFD19FE00633113 /* ontology-destroy-you-bass.exs in Resources */ = {isa = PBXBuildFile; fileRef = 550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */; };
 		550D6D2E1DFD1B9400633113 /* EXS Factory Samples in Resources */ = {isa = PBXBuildFile; fileRef = 550D6D2D1DFD1B9400633113 /* EXS Factory Samples */; };
 		550D6D301DFD243000633113 /* AudioTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6D2F1DFD243000633113 /* AudioTypes.swift */; };
+		550D6D361DFE257F00633113 /* MidiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6D351DFE257F00633113 /* MidiPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ontology-destroy-you-bass.exs"; sourceTree = "<group>"; };
 		550D6D2D1DFD1B9400633113 /* EXS Factory Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "EXS Factory Samples"; sourceTree = "<group>"; };
 		550D6D2F1DFD243000633113 /* AudioTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTypes.swift; sourceTree = "<group>"; };
+		550D6D351DFE257F00633113 /* MidiPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				550D6CF01DFCDFF900633113 /* SampleLoadable.swift */,
 				550D6CF21DFCF20500633113 /* MIDIEventCapable.swift */,
 				550D6D2F1DFD243000633113 /* AudioTypes.swift */,
+				550D6D351DFE257F00633113 /* MidiPlayer.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				550D6CE41DFC73AC00633113 /* Sampler.swift in Sources */,
 				550D6CF31DFCF20500633113 /* MIDIEventCapable.swift in Sources */,
 				550D6D301DFD243000633113 /* AudioTypes.swift in Sources */,
+				550D6D361DFE257F00633113 /* MidiPlayer.swift in Sources */,
 				550D6CC31DFC735B00633113 /* AppDelegate.swift in Sources */,
 				550D6CED1DFC7BE200633113 /* ViewController.swift in Sources */,
 				550D6CEF1DFC7F4700633113 /* AudioErrors.swift in Sources */,

@@ -38,3 +38,14 @@ enum AudioSessionError: Error {
     case errorSettingPreferredBufferDuration(Error)
     case errorActivatingSession(Error)
 }
+
+enum MusicPlayerError: Error {
+    case unableToCreateNewPlayer(code: Int)
+    case unableToCreateNewSequence(code: Int)
+    case unableToSetSequence(code: Int)
+    case unableToSetAUGraphForSequence(code: Int)
+    case unableToStartPreroll(code: Int)
+    case unableToAccessPlayerOrSequence
+    case unableToLoadFile(code: Int)
+    case unableToGetTempoTrack(code: Int)
+}
