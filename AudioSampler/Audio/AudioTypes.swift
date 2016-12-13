@@ -17,6 +17,7 @@ enum InstrumentType {
 
 protocol AudioType {
     var instrumentUnit: AudioUnit? { get set }
+    var processingGraph: AUGraph? { get set }
 }
 
 typealias Instrument = AudioType & MIDIEventCapable
