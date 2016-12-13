@@ -45,7 +45,7 @@ class Sampler: SamplerInstrument {
     }
     
     // MARK: - Setup AUGraph
-    func createAUGraph() throws {
+    private func createAUGraph() throws {
         var result = noErr
         var samplerNode = AUNode()
         var ioNode = AUNode()
@@ -108,7 +108,7 @@ class Sampler: SamplerInstrument {
         }
     }
     
-    func configureAndStart(graph: AUGraph) throws {
+    private func configureAndStart(graph: AUGraph) throws {
         var result = noErr
         var framesPerSlice: UInt32 = 0
         var framesPerSlicePropertySize = UInt32(MemoryLayout.size(ofValue: framesPerSlice))
@@ -183,7 +183,7 @@ class Sampler: SamplerInstrument {
     }
     
     // MARK: - AudioSession
-    func setupAudioSession() throws {
+    private func setupAudioSession() throws {
         // Set the category
         do {
             try sessionInstance.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
