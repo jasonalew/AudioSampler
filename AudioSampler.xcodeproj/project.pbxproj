@@ -23,6 +23,7 @@
 		550D6D2E1DFD1B9400633113 /* EXS Factory Samples in Resources */ = {isa = PBXBuildFile; fileRef = 550D6D2D1DFD1B9400633113 /* EXS Factory Samples */; };
 		550D6D301DFD243000633113 /* AudioTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6D2F1DFD243000633113 /* AudioTypes.swift */; };
 		550D6D361DFE257F00633113 /* MidiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D6D351DFE257F00633113 /* MidiPlayer.swift */; };
+		550D6D381DFFC2E600633113 /* bach-invention-01.mid in Resources */ = {isa = PBXBuildFile; fileRef = 550D6D371DFFC2E600633113 /* bach-invention-01.mid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		550D6D2D1DFD1B9400633113 /* EXS Factory Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "EXS Factory Samples"; sourceTree = "<group>"; };
 		550D6D2F1DFD243000633113 /* AudioTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTypes.swift; sourceTree = "<group>"; };
 		550D6D351DFE257F00633113 /* MidiPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiPlayer.swift; sourceTree = "<group>"; };
+		550D6D371DFFC2E600633113 /* bach-invention-01.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "bach-invention-01.mid"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		550D6CF41DFD19E400633113 /* Instruments */ = {
 			isa = PBXGroup;
 			children = (
+				550D6D371DFFC2E600633113 /* bach-invention-01.mid */,
 				550D6D2D1DFD1B9400633113 /* EXS Factory Samples */,
 				550D6CF51DFD19FE00633113 /* ElPiano1.sf2 */,
 				550D6CFE1DFD19FE00633113 /* ontology-destroy-you-bass.exs */,
@@ -249,6 +252,7 @@
 				550D6D051DFD19FE00633113 /* ontology-destroy-you-bass.exs in Resources */,
 				550D6D2E1DFD1B9400633113 /* EXS Factory Samples in Resources */,
 				550D6CC81DFC735C00633113 /* Main.storyboard in Resources */,
+				550D6D381DFFC2E600633113 /* bach-invention-01.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

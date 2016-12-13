@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-class MidiPLayer {
+class MidiPlayer {
     // MARK: - Properties
     var musicPlayer: MusicPlayer?
     var musicSequence: MusicSequence?
@@ -76,6 +76,7 @@ class MidiPLayer {
         guard result == noErr else {
             throw MusicPlayerError.unableToGetTempoTrack(code: Int(result))
         }
+        
     }
     
     func play() {
