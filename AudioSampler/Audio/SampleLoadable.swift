@@ -12,7 +12,7 @@ import AVFoundation
 protocol SampleLoadable {}
 
 extension SampleLoadable where Self: AudioType {
-    /// Loads and instrument to the AudioUnit sampler
+    /// Loads an instrument to the AudioUnit sampler
     ///
     /// - Parameters:
     ///   - sampler: the AudioUnit sampler

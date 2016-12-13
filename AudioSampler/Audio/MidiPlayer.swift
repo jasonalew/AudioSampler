@@ -34,6 +34,12 @@ class MidiPLayer {
     }
     
     // MARK: - Actions
+    /// Loads a MIDI sequence
+    ///
+    /// - Parameters:
+    ///   - url: the URL of the MIDI file
+    ///   - graph: the AUGraph
+    /// - Throws: throws a MusicPlayerError
     func loadMidiSequence(at url: URL, withGraph graph: AUGraph) throws {
         var result = noErr
         guard let musicSequence = musicSequence,
